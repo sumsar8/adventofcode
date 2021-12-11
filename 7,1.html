@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        let input = [16, 1, 2, 0, 4, 2, 7, 1, 2, 14];
+        let totalfuel = [];
+        let a = 0;
+        let cheapestroute = 0;
+
+        for (let z = 0; z < 16; z++) {
+            for (let i = 0; i < input.length; i++) {
+                a += Math.abs(input[i] - z);
+            }
+            totalfuel.push(a);
+            a = 0;
+        }
+        for (let i = 0; i < totalfuel.length; i++) {
+            if (totalfuel[i] < totalfuel[i + 1]) {
+                cheapestroute = totalfuel[i];
+            }
+        }
+        console.log(cheapestroute);
+    </script>
+</html>
