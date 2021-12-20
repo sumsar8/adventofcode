@@ -86,14 +86,19 @@
         ];
         let totalfuel = [];
         let a = 0;
-        console.log(input);
+        let b = 0;
         for (let z = 0; z < input.length; z++) {
             for (let i = 0; i < input.length; i++) {
-                a += Math.abs(input[i] - z);
+                b += Math.abs(input[i] - z);
+                for (let x = 0; x < b; x++) {
+                    a += b - x;
+                }
+                b = 0;
             }
             totalfuel.push(a);
             a = 0;
         }
+        console.log(totalfuel);
         let cheapestroute = totalfuel[0];
         console.log(totalfuel);
         for (let i = 0; i < totalfuel.length; i++) {

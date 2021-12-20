@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body></body>
+    <script>
+        const rows = 10;
+        const cols = 10;
+        const defaultValue = 0;
+        let input = [
+            0, 9, 5, 9, 8, 0, 0, 8, 9, 4, 3, 4, 2, 2, 2, 1, 7, 0, 7, 4, 6, 4, 2,
+            0, 0, 9, 2, 9, 3, 4, 1, 4, 0, 0, 8, 8, 5, 5, 8, 2
+        ];
+        let grid = matrix(rows, cols, defaultValue);
+
+        function matrix(rows, cols, defaultValue) {
+            var arr = [];
+
+            // Creates all lines:
+            for (var i = 0; i < rows; i++) {
+                // Creates an empty line
+                arr.push([]);
+
+                // Adds cols to the empty line:
+                arr[i].push(new Array(cols));
+
+                for (var j = 0; j < cols; j++) {
+                    // Initializes:
+                    arr[i][j] = defaultValue;
+                }
+            }
+
+            return arr;
+        }
+        console.log(grid);
+        for (let i = 0; i < input.length; i++) {
+            let a = i * 4;
+            if (
+                input[i] > input[i + 2] ||
+                input[i] < input[i + 2] ||
+                input[i + 1] > input[i + 3] ||
+                input[i + 1] < input[i + 3]
+            ) {
+                if (input[i] > input[i + 2] || input[i] < input[i + 2]) {
+                    let hordist = Math.abs(input[i] - input[i + 2]);
+                }
+            }
+        }
+    </script>
+</html>
