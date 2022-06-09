@@ -26,7 +26,8 @@
             for (let i = 0; i < input.length; i++) {
                 if (input[z].charAt(i) == 9) {
                     console.log(parseInt(input[z].charAt(i + 1)) + 1);
-                    input[z].charAt(i + 1) = toString(parseInt(input[z].charAt(i + 1)) + 1);
+                    input[z].charAt(i + 1).replace =
+                        input[z].charAt(i + 1) + +1;
                 }
             }
         }
